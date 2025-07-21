@@ -4,6 +4,7 @@ class chatbook:
         
         
         self.username = ''
+        self.email=''
         self.password = ''
         self.loggedin = False
         self.menu()
@@ -31,21 +32,25 @@ class chatbook:
 
 
     def signup(self):
+        name = input("enter your user@45name here -> ")
         email = input("enter your email here -> ")
         pwd = input("setup your password here -> ")
-        self.username = email
+        self.email=email
+        self.username = name
         self.password = pwd
         print("You have signed up successfully !!")
         print("\n")
         self.menu()
 
     def signin(self):
-        if self.username=='' and self.password=='':
+        if self.username=='' and self.password=='' and self.email=='':
             print("Please signup first by pressing 1 in the main menu")
         else:
-            uname = input("enter your email/username here -> ")
+            uname = input("enter your username here -> ")
+            email=input("Enter your email here -> ")
             pwd = input("ENter your password here -> ")
-            if self.username==uname and self.password==pwd:
+
+            if self.username==uname and self.password==pwd  and self.email==email:
                 print("You have signed in successfully !!")
                 self.loggedin = True
             else:
